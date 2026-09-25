@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📖 bookmakeStudio.com</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="book-showcase">
+        <div class="book-visual">
+          <div class="book-shadow"></div>
+          <div class="book-cover">
+            <div class="cover-line">A NOVEXA STUDIO ORIGINAL</div>
+            <h2>THE HACKER</h2>
+            <div class="cover-of">OF</div>
+            <div class="cover-title">NOVE<span>X</span>A</div>
+            <div class="cover-figure">
+              <div class="hood"></div>
+              <div class="body"></div>
+              <div class="laptop">
+                <div class="screen-mark">N</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="editor">
+        <h2>✍️ Create Your Book</h2>
+
+        <div class="generator-box">
+          <h3>🤖 AI Story Generator</h3>
+          <label for="prompt">Story idea</label>
+          <input id="prompt" placeholder="Example: A shy inventor who discovers a city floating in the clouds" />
+          <div class="button-row">
+            <button type="button" onclick="generateStory()">✨ Generate Story</button>
+          </div>
+        </div>
+
+        <div class="assistant-box">
+          <h3>🧠 Author Assistant</h3>
+          <label for="genre">Genre</label>
+          <input id="genre" placeholder="Fantasy, mystery, romance, sci-fi..." />
+
+          <label for="tone">Tone</label>
+          <input id="tone" placeholder="Hopeful, dark, magical, adventurous..." />
+
+          <label for="goal">Story goal</label>
+          <input id="goal" placeholder="What does the main character want?" />
+
+          <div class="button-row">
+            <button type="button" onclick="helpAuthor()">💡 Help Me Write</button>
+            <button type="button" onclick="expandStoryDraft()">✨ Expand Story</button>
+            <button type="button" onclick="addDraftToStory()">📖 Add to Storybook</button>
+          </div>
+
+          <label for="assistantOutput">AI story draft</label>
+          <textarea id="assistantOutput" placeholder="Your AI assistant draft will appear here..."></textarea>
+        </div>
+
+        <label for="title">Book Title</label>
+        <input id="title" placeholder="Enter your book title" />
+
+        <label for="author">Author</label>
+        <input id="author" placeholder="Enter your name" />
+
+        <label for="story">Your Story</label>
+        <textarea
+          id="story"
+          placeholder="Write or paste your story here...&#10;&#10;Example:&#10;&#10;Chapter 1&#10;&#10;Once upon a time, a young hero discovered a mysterious world..."
+        ></textarea>
+
+        <div class="button-row">
+          <button type="button" onclick="createBook()">📚 Create Book</button>
+          <button type="button" class="secondary" onclick="clearBook()">🗑️ Clear</button>
+        </div>
+      </section>
+
+      <section id="book" class="book" aria-live="polite">
+        <div class="cover">
+          <h2 id="bookTitle">My Book</h2>
+          <p>Written by <strong id="bookAuthor">Unknown Author</strong></p>
+          <p>📖</p>
+        </div>
+
+        <div id="pages"></div>
+
+        <div class="controls">
+          <button type="button" onclick="previousPage()">⬅️ Previous</button>
+          <button type="button" onclick="nextPage()">Next ➡️</button>
+          <button type="button" onclick="printBook()">🖨️ Print Book</button>
+        </div>
+
+        <div class="page-number" id="pageNumber"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
